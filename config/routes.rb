@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :items
-      resources :orders
       resources :merchants
+      resources :invoices
+      resources :invoice_items
+      resources :customers
+      resources :transactions 
     end
   end
 end

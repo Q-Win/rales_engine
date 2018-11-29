@@ -1,4 +1,6 @@
+require 'pry'
 require 'rails_helper'
+
 
 describe "Merchantss API" do
   it "sends a list of merchants" do
@@ -10,6 +12,6 @@ describe "Merchantss API" do
 
     merchants = JSON.parse(response.body)
 
-   expect(merchants.count).to eq(3)
+   expect(merchants["data"].count).to eq(3)
   end
 end
