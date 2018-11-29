@@ -12,4 +12,14 @@ describe "customers API" do
 
     expect(customers["data"].count).to eq(3)
   end
+
+  xit "sends an indivdual customer" do
+    id = create(:customer).id
+
+    get "/api/v1/customers/#{id}"
+
+    customer = JSON.parse(response.body)
+    expect(response).to be_successful
+    expect(customer["id"]).to eq(id)
+  end
 end
